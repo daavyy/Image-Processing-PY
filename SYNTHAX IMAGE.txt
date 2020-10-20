@@ -1,0 +1,86 @@
+from PIL import Image
+
+sizee = Image.open("E:\peppers.tif")
+
+width, height = sizee.size 
+
+mTop = 5
+mBottom = 5
+mLeft = 5
+mRight = 5
+mode = 'RGB'
+size = ((width + mLeft + mRight) , (height + mTop + mBottom))
+# size = (600,600)
+color = (255, 255, 0)
+
+background = Image.new(mode, size, color)
+
+backgroundCopy = background.copy()
+
+imgCr11 = Image.open("E:\imgCr11.jpg")
+imgCr12 = Image.open("E:\imgCr12.jpg")
+imgCr21 = Image.open("E:\imgCr21.jpg")
+imgCr22 = Image.open("E:\imgCr22.jpg")
+
+backgroundCopy.paste(imgCr11,(mLeft, mTop))
+backgroundCopy.paste(imgCr12,(int((width + mLeft + mRight)/2),mRight))
+backgroundCopy.paste(imgCr21,(mLeft,int((height + mTop + mBottom)/2)))
+backgroundCopy.paste(imgCr22,(int((width + mLeft + mRight)/2),int((height + mTop + mBottom)/2)))
+backgroundCopy.show()
+backgroundCopy.save("E:\imagepasted.jpg")
+
+======================================================================================
+
+from PIL import Image
+
+images = Image.open(r"E:\waterfall.bmp")
+
+images.show()
+
+==============================
+
+# Improting Image class from PIL module 
+from PIL import Image 
+  
+# Opens a image in RGB mode 
+img = Image.open(r"C:\Users\Admin\Pictures\geeks.png") 
+  
+# Size of the image in pixels (size of orginal image) 
+# (This is not mandatory) 
+width, height = img.size 
+  
+# Setting the points for cropped image 
+left = 5
+top = height / 4
+right = 164
+bottom = 3 * height / 4
+  
+# Cropped image of above dimension 
+# (It will not change orginal image) 
+img1 = img.crop((left, top, right, bottom)) 
+  
+# Shows the image in image viewer 
+img1.show()
+
+koordinat (titik x awal,titik y awal,ambil berapa pixel x, ambil berapa pixel y)
+
+img1.save()
+------------------------------ 
+CROP IMAGE
+
+from PIL import Image
+img = Image.open('E:\\peppers.tif')
+img.size
+img1 = img.crop((0,0,256,256))
+img1.save('E:\\imgCr11.jpg')
+img2 = img.crop((256,0,512,256))
+img2.save('E:\\imgCr12.jpg')
+img3 = img.crop((0,256,256,512))
+img3.save('E:\\imgCr21.jpg')
+img4 = img.crop((256,256,512,512))
+img4.save('E:\\imgCr22.jpg')
+
+lab 5.3
+buka image kosong 600,600 , (255,255,255)
+pastekan 4 potongan image yang sudah diperoleh
+diberi jarak 5 px, dan baca tentang image enhancement.

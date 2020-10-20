@@ -1,0 +1,170 @@
+IMAGE ENHANCEMENT = E:\fox.jpg
+=========================================================
+Brightness|
+-----------
+from PIL import Image
+from PIL import ImageEnhance
+gbr = Image.open('')
+#gbr.show()
+
+cerah = 3.0
+pencerah = ImageEnhance.Brightness(gbr)
+foxlebihcerah = pencerah.enhance(cerah)
+#foxlebihcerah.show()
+foxlebihcerah.save('E:\foxlebihcerah.jpg')
+==========================================================
+Kontras|
+--------
+from PIL import Image
+from PIL import ImageEnhance
+
+gbr2 = Image.open('E:\fox.jpg')
+#gbr2.show()
+
+kontras = 1.5
+pengontras = ImageEnhance.Contrast(gbr2)
+foxlebihkontras = pengontras.enhance(kontras)
+foxlebihkontras.save(('E:\foxlebihkontras.jpg'))
+=========================================================
+MENGGANTI WARNA IMAGE |
+----------------------
+from PIL import Image
+from PIL import ImageEnhance
+
+gbr3 = Image.open('E:\fox.jpg')
+gbr3 = gbr3.convert('RGBA')
+r,g,b,alpha = gbr3.split()
+alpha.show()
+gbr3.show()
+gbr3swap = Image.merge('RGBA',(g,r,b,alpha))
+gbr3swap.show()
+gbr3swap.save('E:\gbr3swap.png')
+
+===========================================================
+GREYSCALE|
+----------
+from PIL import Image
+from PIL import ImageEnhance
+
+img4 = Image.open('E:\fox.jpg')
+img4 = img4.convert('L')
+img4.save('E:\foxgrayscale.jpg')
+
+======================================================
+HITAM PUTIH|
+------------
+from PIL import Image
+from PIL import ImageEnhance
+
+img5 = Image.open('E:\fox.jpg')
+img5 = img5.convert('1')
+img5.save('E:\foxbaw.jpg')
+
+=======================================
+tugas 6 BRIGHTNESS
+
+from PIL import Image
+from PIL import ImageEnhance
+gbr = Image.open(r"E:\fox.jpg")
+cerah = -2.0
+pencerah = ImageEnhance.Brightness(gbr)
+foxmin2 = pencerah.enhance(cerah)
+foxmin2.save(r"E:\foxmin2.jpg")
+
+--------------------------------------------
+
+from PIL import Image
+from PIL import ImageEnhance
+gbr = Image.open(r"E:\fox.jpg")
+cerah = 4.0
+pencerah = ImageEnhance.Brightness(gbr)
+foxb4 = pencerah.enhance(cerah)
+foxb4.save(r"E:\foxb4.jpg")
+
+--------------------------------------------
+
+from PIL import Image
+from PIL import ImageEnhance
+gbr = Image.open(r"E:\fox.jpg")
+cerah = 1.0
+pencerah = ImageEnhance.Brightness(gbr)
+foxb1 = pencerah.enhance(cerah)
+foxb1.save(r"E:\foxb1.jpg")
+
+--------------------------------------------
+
+from PIL import Image
+from PIL import ImageEnhance
+gbr = Image.open(r"E:\fox.jpg")
+cerah = 0.0
+pencerah = ImageEnhance.Brightness(gbr)
+foxb0 = pencerah.enhance(cerah)
+foxb0.save(r"E:\foxb0.jpg")
+
+
+----------------------------------------
+TUGAS 6 KONTRAS
+--------------
+from PIL import Image
+from PIL import ImageEnhance
+
+gbr = Image.open(r"E:\fox.jpg")
+#gbr.show()
+
+kontras = 0.0
+pengontras = ImageEnhance.Contrast(gbr)
+foxk00 = pengontras.enhance(kontras)
+foxk00.save((r"E:\foxk00.jpg"))
+
+=====================================================
+from PIL import Image
+from PIL import ImageEnhance
+
+gbr = Image.open(r"E:\fox.jpg")
+#gbr.show()
+
+kontras = 1.0
+pengontras = ImageEnhance.Contrast(gbr)
+foxk1 = pengontras.enhance(kontras)
+foxk1.save((r"E:\foxk1.jpg"))
+
+====================================================
+from PIL import Image
+from PIL import ImageEnhance
+
+gbr = Image.open(r"E:\fox.jpg")
+#gbr.show()
+
+kontras = 3.0
+pengontras = ImageEnhance.Contrast(gbr)
+foxk3 = pengontras.enhance(kontras)
+foxk3.save((r"E:\foxk3.jpg"))
+=====================================================
+TUGAS SWAP B-R , R-B
+
+from PIL import Image
+from PIL import ImageEnhance
+
+gbr = Image.open(r"E:\demo.jpg")
+gbr = gbr.convert('RGBA')
+r,g,b,a = gbr.split()
+a.show()
+gbr.show()
+gbrswap = Image.merge('RGBA',(b,g,r,a))
+gbrswap.show()
+gbrswap.save(r"E:\demoswapbr.png")
+
+-------------------------------------------
+SWAP R-A , A-B
+
+from PIL import Image
+from PIL import ImageEnhance
+
+gbr = Image.open(r"E:\demo.jpg")
+gbr = gbr.convert('RGBA')
+r,g,b,a = gbr.split()
+a.show()
+gbr.show()
+gbrswap = Image.merge('RGBA',(b,g,a,r))
+gbrswap.show()
+gbrswap.save(r"E:\demoswapRaab.png")
